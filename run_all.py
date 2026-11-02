@@ -3,9 +3,15 @@ import sys
 import time
 import os
 
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 def run_services():
     print("=" * 60)
-    print("🚀 SalesGenie AI - Launching Backend & Frontend")
+    print("[*] SalesGenie AI - Launching Backend & Frontend")
     print("=" * 60)
     print("1. Backend API:  http://localhost:8000 (Docs: http://localhost:8000/docs)")
     print("2. Frontend UI:  http://localhost:8501")

@@ -162,5 +162,33 @@ class TestSalesGenieBackendAndFrontendIntegration(unittest.TestCase):
         self.assertIn("email", df.columns)
         self.assertGreaterEqual(len(df), 3)
 
+    def test_11_conversation_intelligence_summarization(self):
+        """Milestone 3 Test: POST /intelligence/conversation generates meeting summary, action items, and key points."""
+        leads = self.client.get("/leads/").json()
+        lead_id = leads[0]["lead_id"]
+        payload = {
+            "lead_id": lead_id,
+            "notes": (
+                "Sarah Johnson called today regarding data processing speed bottlenecks. "
+                "Current pipelines take 6 hours daily. Budget of $50K approved for Q3. "
+                "Needs architecture document by Friday and engineering demo scheduled."
+            )
+        }
+        response = self.client.post("/intelligence/conversation", json=payload)
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertEqual(data.get("lead_id"), lead_id)
+        self.assertTrue(len(data.get("summary", "")) > 0)
+        self.assertTrue(len(data.get("action_items", "")) > 0)
+        self.assertTrue(len(data.get("key_points", "")) > 0)
+        self.assertTrue(len(data.get("follow_up", "")) > 0)
+
+    def test_12_crm_sync_endpoint_truthfulness(self):
+        """Milestone 3 Test: Unconfigured CRM sync endpoint returns 404, validating frontend truthful reporting."""
+        payload = {"lead_id": 1, "company_name": "TechCorp"}
+        response = self.client.post("/crm/sync", json=payload)
+        # Verify backend does not have fake CRM route - returns 404
+        self.assertEqual(response.status_code, 404)
+
 if __name__ == "__main__":
     unittest.main()

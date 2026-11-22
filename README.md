@@ -131,9 +131,9 @@ This repository hosts the **Frontend Application** along with the integrated bac
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/Mahek-saba/frontend-infosys.git
-cd frontend-infosys
-git checkout feature/milestone-3-frontend
+git clone https://github.com/Mahek-saba/Infosys-Internship.git
+cd Infosys-Internship
+git checkout main
 ```
 
 ### 3. Create a Virtual Environment & Install Dependencies

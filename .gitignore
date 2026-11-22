@@ -25,6 +25,9 @@ __pycache__/
 install_guide_*.txt
 exec_guide_*.txt
 
+# Archive files
+*.zip
+
 # IDE & Editor Configs
 .vscode/
 .idea/

@@ -1,4 +1,6 @@
-# SalesGenie AI — Lead Management and Outreach Automation System
+# AI-Powered Intelligent Sales Forecasting Platform using Predictive Analytics
+
+### Lead Management and Outreach Automation System (SalesGenie AI)
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![Frontend](https://img.shields.io/badge/Frontend-Streamlit%201.32+-red.svg)](https://streamlit.io/)
@@ -131,8 +133,8 @@ This repository hosts the **Frontend Application** along with the integrated bac
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/Mahek-saba/Infosys-Internship.git
-cd Infosys-Internship
+git clone https://github.com/Mahek-saba/AI-Powered-Intelligent-Sales-Forecasting-Platform-using-Predictive-Analytics.git
+cd AI-Powered-Intelligent-Sales-Forecasting-Platform-using-Predictive-Analytics
 git checkout main
 ```
 
